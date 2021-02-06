@@ -1,2 +1,3 @@
-<h1>Drugs#index</h1>
-<p>Find me in app/views/drugs/index.html.erb</p>
+<h1> <% @drugs.each do |drug|  %> </h1>
+  <%= drug.name %>
+  <% end %>

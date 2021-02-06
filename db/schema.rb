@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_02_06_205237) do
 
   create_table "drugs", force: :cascade do |t|
@@ -67,4 +68,5 @@ ActiveRecord::Schema.define(version: 2021_02_06_205237) do
   add_foreign_key "invoice_details", "drugs"
   add_foreign_key "invoice_details", "invoices"
   add_foreign_key "invoices", "users"
+
 end

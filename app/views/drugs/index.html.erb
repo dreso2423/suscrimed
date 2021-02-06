@@ -1,3 +1,3 @@
-<h1> <% @drugs.each do |drug|  %> </h1>
-  <%= drug.name %>
-  <% end %>
+<% @drugs.each do |drug| %>
+  <p> <%= drug.drug_name %> </p>
+<% end %>

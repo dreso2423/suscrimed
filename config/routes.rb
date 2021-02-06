@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'drugs/index'
-  get 'drugs/new'
-  get 'drugs/create'
-  get 'drugs/show'
-  get 'drugs/edit'
-  get 'drugs/update'
-  get 'drugs/delete'
+  resources :drugs, only: :index
+
+  devise_for :users
+  root to: 'pages#home'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  cost: 1
+  drug_name: MyString
+  image: MyString
+  image_alt_text: MyString
+  brand: MyString
+  supplier: MyString
+  grammage: MyString
+  description: MyString
+  type: 
+  tags: MyString
+  inventory: 1
+  status: MyString
+  ean: MyString
+  active_ingredient: MyString
+  cofepris_group: MyString
+  patent_name: MyString
+  product_available: false
+  body: MyString
+  title: MyString
+  laboratory: MyString
+
+two:
+  price: 1
+  cost: 1
+  drug_name: MyString
+  image: MyString
+  image_alt_text: MyString
+  brand: MyString
+  supplier: MyString
+  grammage: MyString
+  description: MyString
+  type: 
+  tags: MyString
+  inventory: 1
+  status: MyString
+  ean: MyString
+  active_ingredient: MyString
+  cofepris_group: MyString
+  patent_name: MyString
+  product_available: false
+  body: MyString
+  title: MyString
+  laboratory: MyString

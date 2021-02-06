@@ -1,9 +1,10 @@
 class DrugsController < ApplicationController
   def index
+    @drugs = Drug.all
   end
 
   def new
-    @drugs = Drug.all
+    @drug = Drug.new
   end
 
   def create

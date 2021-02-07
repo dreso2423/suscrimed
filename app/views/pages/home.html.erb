@@ -1,5 +1,77 @@
-<html>
+<html lang="EN">
+  <head>
+    <meta charset="utf-8">
+    <title>Suscrimed la farmacia que no me olvida</title>
+    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
 
-<h1>Hola</h1>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!--Navbar-->
+
+     <!--Alert-->
+    <div class="center hero-offer alert alert-warning">
+        Recibe 5% de descuento en tu primer pedido
+    </div>
+    <!--Hero Section-->
+    <div class="hero-section" style="background-image: url(<%= asset_path 'Suscrimed-Backround.jpg' %>);">
+      <div class="wrapper">
+        <img class="small-logo" src="<%= asset_path 'suscrimed-logo-full' %>" alt="logo">
+        <p >🇲🇽 La farmacia en línea #1 de México</p>
+        <h1 class="hero-heading">Envió Gratis En Todo México</h1>
+        <p class="normal">Ahorra tiempo y dinero, nosotros nos encargamos de tu salud</p>
+        <p class="hero-text-start">Empieza hablando con nosotros en WhatsApp</p>
+        <a class="button button_fill_primary" href="">Haz tu primer pedido</a>
+         <p class="privacy-policy">Al proceder aceptas nuestros <a href="">Términos y condiciones </a> y <a href="">Aviso de privacidad</a></p>
+      </div>
+
+      <div class="star-rating-wrapper">
+        <span class="star-rating__icons">⋆ ⋆ ⋆ ⋆ ⋆</span>
+        <p class="star-rating-text">4.9 Estrellas en Google & Facebook</p>
+      </div>
+    </div>
+    <!-- code a "Icons" section -->
+      <div class="icon_section" >
+          <ul class="icons" >
+              <li class="icon" ><img class="user_icon" src="<%= asset_path 'user.svg' %>" > <span class="icon_text" > Lorem ipsum dolor</span></li>
+              <li class="icon" ><img class="user_icon" src="<%= asset_path 'user.svg' %>" > <span class="icon_text" > Lorem ipsum dolor</span></li>
+              <li class="icon" ><img class="user_icon" src="<%= asset_path 'user.svg' %>" > <span class="icon_text" > Lorem ipsum dolor</span></li>
+              <li class="icon" ><img class="user_icon" src="<%= asset_path 'user.svg' %>" > <span class="icon_text" > Lorem ipsum dolor</span></li>
+          </ul>
+      </div>
+
+    <!-- code a "How it works" section -->
+   <div class="card">
+        <h2 class="card_header" >¿Cómo funciona Suscrimed?</h2>
+        <div class="items" >
+            <li class="item" ><img class="img" src="<%= asset_path 'whatsapp.svg' %>" >
+                 <span class="item_header" > Ordena tus medicamentos</span>
+                 <p class="item_text" >Encuentra tus medicamentos</p>
+            </li>
+            <li class="item" ><img class="img" src="<%= asset_path 'calendario_home.svg' %>" >
+                 <span class="item_header" > Agenda tus proximas entregas</span>
+                 <p class="item_text" >Toma menos de 2 minutos</p>
+            </li>
+            <li class="item" ><img class="img" src="<%= asset_path 'enviogratis' %>" >
+                 <span class="item_header" >Envio gratis</span>
+                 <p class="item_text" >Recibe tus medicamentos sin costo adicional. Solo pagas por tus medicinas</p>
+            </li>
+        </div>
+        <button class="btn btn-primary" >Haz tu primer pedido</button>
+    </div>
+
+
+  </body>
 
 </html>

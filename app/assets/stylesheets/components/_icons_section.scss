@@ -1,0 +1,40 @@
+
+
+body, html {
+    width: 100%;
+    margin: 0;
+}
+.icon_section{
+    background-color: rgba(0,170,255,.04);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-width: 200px;
+    .icons{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        .icon{
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            @media (max-width: 705px) {
+                flex-direction: column;
+            }
+            .icon_text{
+                display: flex;
+                padding: 10px;
+                color:  #005b88;
+            }
+            .user_icon{
+                width: 30px;
+
+            }
+        }
+    }
+}
+
+icon svg{
+  fill: #005b88;
+}

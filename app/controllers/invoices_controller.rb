@@ -1,5 +1,14 @@
 class InvoicesController < ApplicationController
   def index
+    @invoice = Invoice.all
+  end
+
+  def new
+    @invoice = Invoice.new
+  end
+
+  def create
+    @invoice = Invoice.new()
   end
 
   def edit

@@ -1,47 +1,37 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://instagram.fgdl13-1.fna.fbcdn.net/v/t51.2885-19/s320x320/69835259_396622420996217_3079382875674509312_n.jpg?_nc_ht=instagram.fgdl13-1.fna.fbcdn.net&_nc_ohc=YVTivMndZY0AX9XRiao&tp=1&oh=cf15c2004f0555df6932d4b57c47979d&oe=6037A662" %>
-    <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Hire a truck", trucks_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "List your truck", new_truck_path , class: "nav-link" %>
-        </li>
-
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/dreso2423", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Edit your trucks", my_trucks_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-
-        <li class="nav-item">
-          <%= link_to "Hire a truck", new_user_session_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "List your truck", new_user_session_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign up", new_user_session_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+   <div  onclick="toggleSideBar()" id="overlay" class=""></div>
+   <div class="navbar" >
+       <div class="logo" >
+           <h1>LOGO</h1>
+       </div>
+       <ul class="nav_links_left ">
+           <h3 onclick="toggleSideBar()" class="sidebar_close_button" >Close</h3>
+       <div class="nav_links" >
+           <li class="nav_link_el" >
+              <a  href="#"> How it works</a>
+           </li>
+           <li class="nav_link_el" >
+               <a  href="#"> Pricing</a>
+           </li>
+           <li class="nav_link_el" >
+               <a  href="#"> Reviews</a>
+           </li>
+           <li class="nav_link_el" >
+               <a  href="#"> Folks</a>
+           </li>
+       </div>
+       </ul>
+       <ul class="nav_links_right ">
+           <li class="nav_link_el responsive_links" >
+               <a  href="#"> Help</a>
+           </li>
+           <li class="nav_link_el responsive_links" >
+               <a  href="#"> Sign In</a>
+           </li>
+           <li class=" btn_action nav_link_el " >
+               <button class="button button_fill_primary" >Get started</button>
+           </li>
+            <li  class=" btn_menu nav_link_el button" >
+               <h3 onclick="toggleSideBar()" class=" responsive_links sidebar_open_button" >Menu</h3>
+            </li>
+       </ul>
 </div>

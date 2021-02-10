@@ -28,10 +28,11 @@ body, html{
   height: 100px;
   top: 0;
   background-color: $white;
-  position: sticky;
+  position: sticky !important;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0.08);
+  z-index: 10;
 
   .logo{
     padding-left: 2%;
@@ -94,6 +95,9 @@ body, html{
     a{
       text-decoration: none;
       color: $black-darker;
+    }
+    a:hover{
+      color:$light-blue;
     }
   }
 }
@@ -181,6 +185,4 @@ body, html{
   cursor: pointer;
 }
 
-.nav_link_el:hover {
-  color: red;
-}
+

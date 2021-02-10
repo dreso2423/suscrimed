@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-6  ">
-      <h2>Please put in the information of your new drug</h2>
+      <h2>Please put in the information of your new order</h2>
       <%= simple_form_for @invoice do |f| %>
-        <%= f.input :frequency, input_html: { class: "form-input" } , label: "Name" %>
-        <%= f.number :quantity, input_html: { class: "form-input" } , label: "Name" %>
+        <%= f.label :user_id   %>
+        <%= f.text_field :user_id %> <br>
+        <%= f.label :user_id   %>
+        <%= f.number_field :user_id %> <br>
+        <%= f.label :frequency %>
+        <%= f.select :frequency, Invoice::FREQUENCY, prompt: "Choose your frequency!" %>
 
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>

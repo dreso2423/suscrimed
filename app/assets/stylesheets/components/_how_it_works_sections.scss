@@ -37,6 +37,7 @@ $large: 1010px;
             width: 100%;
         }
         .img{
+            height: 200px;
             width: 200px;
             margin: auto;
         }
@@ -67,6 +68,7 @@ $large: 1010px;
     &:hover{
         box-shadow: 0px 0px 12px 0px $light-blue;
         transition: ease 0.3s;
+        background-color: $light-blue ;
     }
     @media (max-width: $large) {
        width: 80%;

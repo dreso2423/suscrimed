@@ -103,6 +103,31 @@ body, html{
     }
   }
 }
+
+.nav_link_register{
+    margin: 20px;
+    font-weight: 300;
+    font-family: "Poppins";
+    list-style-type: none;
+    font-size: 18px;
+
+
+
+    .btn_action{
+     margin-top: -15px !important;
+     position: absolute;
+    }
+    a{
+      text-decoration: none;
+      color: $green;
+    }
+    a:hover{
+      color:$light-blue;
+    }
+  }
+
+
+
 .responsive_menu{
   z-index: 10;
 .logo{

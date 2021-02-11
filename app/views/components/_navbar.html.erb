@@ -1,7 +1,7 @@
    <div  onclick="toggleSideBar()" id="overlay" class=""></div>
    <div class="navbar" >
        <div class="logo" >
-           <%= image_tag "nav-logo.png", width: 50 %>
+           <a href=" <%= root_path %> "> <%= image_tag "nav-logo.png", width: 50 %> </a>
        </div>
        <ul class="nav_links_left ">
            <h3 onclick="toggleSideBar()" class="sidebar_close_button" >Close</h3>
@@ -20,35 +20,36 @@
            </li>
        </div>
        </ul>
-       <ul class="nav_links_right ">
-           <li class="nav_link_el responsive_links" >
+       <ul class="nav_links_right" style="list-style: none;">
           <% if user_signed_in? %>
+            <li class="dropdown nav-item dropdown">
+              <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Perfil
+              </button>
 
+                  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
-           <!--  <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-            </div> -->
-            <li class="nav-item dropdown">
-                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <%= link_to "Action", "#", class: "dropdown-item" %>
-                      <%= link_to "Another action", "#", class: "dropdown-item" %>
-                    </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item" %>
+                  <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
             </li>
-
           <% else %>
+          <li class="nav_link_register">
+              <%= link_to 'Registrate!', new_user_registration_path  %> <br>
+          </li>
+          <li class="nav_link_el" >
+              <%= link_to 'Inicia Sesión', new_user_session_path  %>
+          </li>
 
-          <%= link_to 'Inicia Sesión', new_user_session_path  %>
-           </li>
-           <li class=" btn_action nav_link_el " >
-               <button class="button button_fill_primary" >Empezar</button>
-           </li>
-          <!--  que es esto -->
-            <li  class=" btn_menu nav_link_el button" >
-               <h3 onclick="toggleSideBar()" class=" responsive_links sidebar_open_button" >Menu</h3>
-            </li>
+
+             <li class=" btn_action nav_link_el " >
+                 <button class="button button_fill_primary" >Empezar</button>
+             </li>
+            <!--  que es esto -->
+              <li  class=" btn_menu nav_link_el button" >
+                 <h3 onclick="toggleSideBar()" class=" responsive_links sidebar_open_button" >Menu</h3>
+              </li>
           <% end %>
        </ul>
 </div>

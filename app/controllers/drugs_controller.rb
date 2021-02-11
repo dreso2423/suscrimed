@@ -1,4 +1,10 @@
 class DrugsController < ApplicationController
+
+skip_before_action :authenticate_user!
+
+
+# como lo hago no mas para el index y show ?
+
   def index
     @drugs = Drug.all
   end

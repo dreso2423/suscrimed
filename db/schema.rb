@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_10_121259) do
+ActiveRecord::Schema.define(version: 2021_02_12_025139) do
 
   create_table "drugs", force: :cascade do |t|
     t.integer "cost"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_121259) do
     t.string "supplier"
     t.string "grammage"
     t.string "description"
-    t.string "type"
+    t.string "drug_type"
     t.string "tags"
     t.integer "inventory"
     t.string "status"

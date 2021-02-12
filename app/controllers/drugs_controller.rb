@@ -6,7 +6,8 @@ skip_before_action :authenticate_user!
 # como lo hago no mas para el index y show ?
 
   def index
-    @drugs = Drug.all
+    @drugs = policy_scope(Drug).order(created_at: :desc)
+
   end
 
   def new

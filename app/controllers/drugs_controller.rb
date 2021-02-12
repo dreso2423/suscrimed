@@ -4,10 +4,26 @@ skip_before_action :authenticate_user!
 
 
 # como lo hago no mas para el index y show ?
+# [[1], "$2a$12$rOdHCT2WAQTITEESkS5vQu"]
+# [[2], "$2a$12$Xx7cacvM5p/XC47y5KNthe"]
+# the una forma le pasas parametros a un controlador
+# lecture del search hace forma y manda parametros en el path
+# tambien en la de ajax y rails viene otra forma que puedo revisar
+# cadda vez que dan agregar al boton del carrito voy a enviar al invoice los obtengo con params y los voy metiendo al invoice.
+# en un futuro cuando le de checkout va ser un invoice create la invoice tiene invoice lines cada invoice tiene una invoice lines.
 
   def index
     @drugs = policy_scope(Drug).order(created_at: :desc)
 
+  end
+
+  def add_to_invoice
+    if session[:andre]
+      session[:andre] += "hola"
+    else
+      session[:andre] = "hola"
+    end
+    puts session[:andre]
   end
 
   def new
@@ -20,6 +36,7 @@ skip_before_action :authenticate_user!
 
   def show
     @drug = Drug.find(params[:id])
+    authorize @drug
   end
 
   def edit

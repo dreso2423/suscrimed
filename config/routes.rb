@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   resources :invoices do
     resources :invoice_details
   end
-  resources :drugs, only: :index
+  resources :drugs
+  get 'drugs/add_to_invoice'
+  # si es por post se cambia la linea
 
   devise_for :users
   root to: 'pages#home'

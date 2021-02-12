@@ -1,4 +1,11 @@
 class InvoiceDetailsController < ApplicationController
+  include CurrentInvoice
+
+  before_action :set_invoice_details, only: [:show, :edit, :update, :destroy]
+  before_action :set_invoice, only: [:show, :edit, :update, :destroy]
+
+
+
   def index
   end
 
@@ -16,4 +23,10 @@ class InvoiceDetailsController < ApplicationController
 
   def delete
   end
+
+  private
+
+
+
+
 end

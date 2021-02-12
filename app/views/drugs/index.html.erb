@@ -5,10 +5,10 @@
     <% @drugs.each do |drug| %>
       <div class="col-6 col-md-4">
         <div class="card">
-          <%= image_tag drug.photo_url , class: "card-img-top" %>
+          <%= image_tag drug.image , class: "card-img-top" %>
           <div class="card-body">
-            <h5 class="card-title"><%= drug.name_name %></h5>
-            <p class="card-text"><%= drug.type %></p>
+            <h5 class="card-title"><%= drug.drug_name %></h5>
+            <p class="card-text"><%= drug.drug_type %></p>
           <!--   funciona el drug type como filtro ? -->
           <p>Amount: <%= humanized_money_with_symbol(drug.price) %></p>
             <%= link_to "More details", drug_path(drug), class: "btn btn-primary" %>

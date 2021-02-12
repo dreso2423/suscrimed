@@ -3,14 +3,6 @@ class InvoicesController < ApplicationController
     @invoice = Invoice.all
   end
 
-  def new
-    @invoice = Invoice.new
-  end
-
-  def create
-    @invoice = Invoice.new()
-  end
-
   def edit
   end
 
@@ -31,6 +23,8 @@ class InvoicesController < ApplicationController
      authorize @invoice
 
     if @invoice.save?
+      # vooy a agregar todas las drogas que existen en la session
+      # invoiceline new
       redirect_to @invoice
     else
       render :new

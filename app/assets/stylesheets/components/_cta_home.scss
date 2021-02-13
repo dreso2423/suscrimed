@@ -1,0 +1,50 @@
+
+
+/*COLORS*/
+$light-blue: #00aaff;
+$white: #ffffff;
+
+body, html{
+    width: 100%;
+    margin: 0;
+}
+.card_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    min-width: 250px;
+    background-color: $light-blue;
+    color: $white;
+    font-family: 'Montserrat';
+    .card_title{
+        margin: auto;
+        min-width: 200px;
+        margin: 20px;
+        text-align: center;
+        font-weight: 800!important;
+
+    }
+    .card_text{
+        margin: auto;
+        padding-top: 40px;
+        padding-bottom: 30px;
+        min-width: 200px;
+        line-height: 0.9;
+        text-align: center;
+    }
+    .sub_text{
+        opacity: 0.8;
+        line-height: 0.9;
+    }
+    .button{
+        margin: auto;
+        width: 200px;
+        padding: 13px;
+      &:hover{
+             color: #000000;
+             transition: ease 0.3s;
+             background-color: $white ;
+         }
+    }
+}

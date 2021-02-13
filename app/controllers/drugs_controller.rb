@@ -17,15 +17,6 @@ skip_before_action :authenticate_user!
 
   end
 
-  def add_to_invoice
-    if session[:andre]
-      session[:andre] += "hola"
-    else
-      session[:andre] = "hola"
-    end
-    puts session[:andre]
-  end
-
   def new
     @drug = Drug.new
   end
@@ -50,6 +41,20 @@ skip_before_action :authenticate_user!
     else
       render :edit
     end
+  end
+
+  def add_to_invoice
+    if session[:cart]
+      if session[:cart][params[:drug_id].to_s]
+        session[:cart][params[:drug_id].to_s] += 1
+      else
+        session[:cart][params[:drug_id].to_s] = 1
+      end
+    else
+      session[:cart] = []
+    end
+    skip_authorization
+    head :no_content
   end
 
   def delete

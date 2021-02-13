@@ -16,22 +16,28 @@
 
 <div class="cards" >
   <% @drugs.each do |drug| %>
-  <div class="card_2" >
-          <div class="card_2_content" >
-              <div class="card_img" >
-                  <%= image_tag drug.image , class: "card-img-top" %>
-              </div>
-              <div class="card_2_texts" >
-                  <h1 class="card_2_title"><%= drug.drug_name %></h1>
-                  <h4 class="card_2_sub" ><%= drug.drug_type %></h4>
-              </div>
-          </div>
-          <div class="card_2_line" ></div>
-          <div class="card_2_footer" >
-          <h2> <%= humanized_money_with_symbol(drug.price) %></h2>
-          <button class="card_2_btn" > Agregar </button>
-          </div>
+  <form action="/drugs/add_to_invoice" method="post">
+    <div class="card_2" >
+            <div class="card_2_content" >
+                <div class="card_img" >
+                    <%= image_tag drug.image , class: "card-img-top" %>
+                </div>
+                <div class="card_2_texts" >
+                    <h1 class="card_2_title"><%= drug.drug_name %></h1>
+                    <h4 class="card_2_sub" ><%= drug.drug_type %></h4>
+                </div>
+            </div>
+            <div class="card_2_line" ></div>
+            <div class="card_2_footer" >
+            <h2> <%= humanized_money_with_symbol(drug.price) %></h2>
+            <!-- <button class="card_2_btn" > Agregar </button> -->
+            <!--  f.button :submit, "Agregar", class: "card_2_btn" %> -->
+              <input type="submit" value="Agregar" class="card_2_btn" >
+              <input type="hidden" name="drug_id" value= <%= drug.id %> >
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            </div>
       </div>
+  </form>
   <% end %>
 </div>
 

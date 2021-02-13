@@ -1,4 +1,4 @@
 class InvoiceDetail < ApplicationRecord
-  belongs_to :invoice_id
-  belongs_to :drug_id
+  belongs_to :invoice
+  belongs_to :drug
 end

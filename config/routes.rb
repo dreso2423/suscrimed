@@ -16,7 +16,8 @@ Rails.application.routes.draw do
     resources :invoice_details
   end
   resources :drugs
-  get 'drugs/add_to_invoice'
+  post 'drugs/add_to_invoice'
+
   # si es por post se cambia la linea
 
   devise_for :users

@@ -1,0 +1,7 @@
+<h1> <%= @invoice.frequency %>  </h1>
+
+<% @invoice.invoice_details.each do |invoice_detail|  %>
+  <p> <%= invoice_detail.drug.drug_name %> <br>
+  <%= invoice_detail.quantity %><br>
+  <%= invoice_detail.subtotal %> </p>
+<% end %>

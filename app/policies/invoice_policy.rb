@@ -1,16 +1,16 @@
-class DrugPolicy < ApplicationPolicy
+class InvoicePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
-
   end
-
-  def show?
+  def new?
     true
   end
-
-  def add_to_invoice?
+  def create?
+    true
+  end
+  def show?
     true
   end
 end

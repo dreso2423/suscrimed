@@ -25,8 +25,8 @@
 
           <li class="dropdown nav-item dropdown">
 
-
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% avatar_url = current_user.facebook_picture_url || "avatar.svg" %>
+            <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

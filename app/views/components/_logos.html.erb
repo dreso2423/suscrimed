@@ -1,0 +1,38 @@
+//Added this because js not working without, dont know why. Feel free to improve this solution.
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+<!-- Por quien -->
+<div class="references" >
+  <div class="references_content" >
+    <div class="titles" >
+      <div class=" brand-text title_1 active" >
+        <h3 class="title " >Title 1 - Brand 1</h3>
+        <h4 class="sub_title" >Subtitle 1</h4>
+      </div>
+      <div class="brand-text title_2" >
+        <h3 class="title " >Title 2 - Brand 2</h3>
+        <h4 class="sub_title" >Subtitle 2</h4>
+      </div>
+      <div class="brand-text title_3" >
+        <h3 class="title " >Title 3 - Brand 3</h3>
+        <h4 class="sub_title" >Subtitle 3</h4>
+      </div>
+      <div class="brand-text title_4" >
+        <h3 class="title " >Title 4 - Brand 4</h3>
+        <h4 class="sub_title" >Subtitle 4</h4>
+      </div>
+      <div class="brand-text title_5" >
+        <h3 class="title " >Title 5 - Brand 5</h3>
+        <h4 class="sub_title" >Subtitle 5</h4>
+      </div>
+    </div>
+    <span  class="line" ></span>
+    <div class="brands" >
+      <img alt="brand_1" class="brand title_1  " src="<%= asset_path 'news1.svg' %>" >
+      <img alt="brand_2" class="brand title_2 " src="<%= asset_path 'news2.svg' %>" >
+      <img alt="brand_3" class="brand title_3 active" src="<%= asset_path 'news3.svg' %>" >
+      <img alt="brand_4" class="brand title_4 " src="<%= asset_path 'news4.svg' %>" >
+      <img alt="brand_5" class="brand title_5" src="<%= asset_path 'news5.svg' %>" >
+    </div>
+  </div>
+</div>

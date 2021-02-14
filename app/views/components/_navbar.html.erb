@@ -24,9 +24,10 @@
           <% if user_signed_in? %>
 
           <li class="dropdown nav-item dropdown">
-            <button class="btn button_fill_primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            </button>
+
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item" %>

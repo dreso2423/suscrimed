@@ -25,8 +25,8 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 gem 'money-rails'
 gem 'stripe'
+gem "omniauth", "~> 1.9.1"
 gem 'omniauth-facebook'
-gem 'omniauth-rails_csrf_protection'
 gem 'figaro'
 gem 'dotenv-rails'
 

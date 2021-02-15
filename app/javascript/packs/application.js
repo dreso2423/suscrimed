@@ -7,11 +7,28 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery")
 import "bootstrap"
 require("channels")
 
+
 /* JAVASCCRIPT FOR COMPONENTS */
 require("../components/brand-logos")
+
+
+
+$(document).on('turbolinks:load', function(){
+  $('.dropdown').on("click",function(){
+    if($(this).hasClass('show')){
+      $(this).removeClass('show');
+      $(this).find('.dropdown-menu').removeClass('show');
+    }else{
+      $(this).addClass('show');
+      $(this).find('.dropdown-menu').addClass('show');
+    }
+    return true;
+  })
+})
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

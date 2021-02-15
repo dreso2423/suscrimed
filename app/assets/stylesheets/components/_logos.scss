@@ -7,6 +7,11 @@ $grey: #808080;
 $grey2: #d4d4d4a9;
 $black-darker: #000;
 
+@keyframes resize_imgs {
+  from {width: 100%}
+  to {width: 10%}
+}
+
 .references{
     background-color: rgba(224, 198, 141, 0.308);
     font-family: 'Montserrat';
@@ -31,26 +36,51 @@ $black-darker: #000;
             text-align: center;
             font-size: 16px;
             color: $brown;
+          line-height: 2;
         }
         .line{
             border: 2px $grey2 solid;
             width: 70%;
             margin: auto;
+          @media (max-width: 800px) {
+            width: 100%;
+          }
         }
+      .titles{
+        .brand-text{
+          display: none;
+        }
+        .active{
+          display: block;
+        }
+      }
         .brands{
             display: flex;
             margin: auto;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            width: 70%;
+            justify-content: center;
             padding: 20px;
             font-weight: 100;
             font-size: 10px;
-            .brand{
-                border: 1px  $grey solid;
-                padding: 20px;
+            width: 100%;
+            @media (max-width: 400px) {
+              flex-wrap: wrap;
             }
+          .brand{
+              padding: 20px;
+              min-width: 75px;
+              margin-top: -25px;
+              cursor: pointer;
+              opacity: 0.4;
+              filter: grayscale(100%);
+              @media (max-width: 400px) {
+                margin-top: 10px;
+              }
+            }
+          .active{
+            opacity: 1;
+            filter: grayscale(0%);
+            border-top: 4px black solid;
+          }
         }
     }
-
 }

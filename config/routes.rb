@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'invoices/delete'
   get 'invoices/create'
   get 'invoices/new'
+
+  get 'cart', to: 'pages#cart'
+
   resources :invoices do
     resources :invoice_details
   end

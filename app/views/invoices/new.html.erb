@@ -8,9 +8,9 @@
             <%= f.simple_fields_for :invoice_details do |i| %>
                 <%= i.label invoice_detail.drug.drug_name %>
                 <%= i.input :quantity, input_html: { value: invoice_detail.quantity } %>
-                <%= i.input :subtotal, input_html: { value: invoice_detail.subtotal } %>
+                <%= i.input :subtotal, input_html: { value: invoice_detail.subtotal, disabled: true} %>
                 <%= i.input :drug_id, as: :hidden, input_html: { value: invoice_detail.drug.id } %>
-
+                <%= f.submit "Eliminar", class: 'btn btn-danger' %>
             <% end %>
         <% end %>
 
@@ -19,6 +19,7 @@
 
         <div class="footer">
           <%= f.submit "Proceder a pagar", class: 'btn btn-primary' %>
+
         </div>
       <% end %>
     </div>

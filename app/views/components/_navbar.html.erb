@@ -24,9 +24,9 @@
           <% if user_signed_in? %>
 
           <li class="dropdown nav-item" id="navbarDropdown">
+            <% avatar_url = current_user.facebook_picture_url || "avatar.svg" %>
 
-
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar"%>
+            <%= image_tag avatar_url, class: "avatar"%>
 
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

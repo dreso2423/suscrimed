@@ -29,6 +29,7 @@ gem "omniauth", "~> 1.9.1"
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'dotenv-rails'
+gem 'pg_search', '~> 2.3.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

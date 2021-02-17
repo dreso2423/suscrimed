@@ -10,9 +10,13 @@
                 <%= i.input :quantity, input_html: { value: invoice_detail.quantity } %>
                 <%= i.input :subtotal, input_html: { value: invoice_detail.subtotal, disabled: true} %>
                 <%= i.input :drug_id, as: :hidden, input_html: { value: invoice_detail.drug.id } %>
-                <%= f.submit "Eliminar", class: 'btn btn-danger' %>
+                <a href= <%="/session/invoice_detail/drugs/#{invoice_detail.drug_id}"%> rel="nofollow" data-method="delete">Eliminar</a>
+
             <% end %>
         <% end %>
+
+
+
 
           <%= f.input :frequency, collection: ['Semanal', 'Mensual', 'Trimestral'] %>
 

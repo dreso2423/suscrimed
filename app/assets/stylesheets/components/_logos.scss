@@ -62,9 +62,10 @@ $black-darker: #000;
             font-weight: 100;
             font-size: 10px;
             width: 100%;
+            //flex-wrap: wrap;
             @media (max-width: 400px) {
-              flex-wrap: wrap;
-            }
+                flex-wrap: wrap;
+              }
           .brand{
               padding: 20px;
               max-width: 200px;

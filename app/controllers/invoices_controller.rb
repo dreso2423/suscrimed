@@ -10,6 +10,7 @@ class InvoicesController < ApplicationController
   end
 
   def delete
+
   end
 
   def new

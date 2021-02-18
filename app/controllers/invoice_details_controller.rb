@@ -23,6 +23,9 @@ class InvoiceDetailsController < ApplicationController
   end
 
   def delete
+    skip_authorization
+    session[:cart].delete(params[:id])
+    redirect_to new_invoice_path
   end
 
   private

@@ -57,3 +57,27 @@
   </div>
 </div>
 </div>
+
+<div class="login_page" >
+<div class="login" >
+  <img alt="logo"  class="brand_logo" src="<%= asset_path 'suscrimed-logo-full.png' %>" >
+  <div class="title" >Bienvenido !</div>
+  <div class="sub_title">Ingresa a tu cuenta Suscrimed</div>
+  <div class="form">
+    <div class="field" >
+      <span class="placeholder" >Username <span style="color: red" >*</span></span>
+      <input type="text" class="username">
+      <span class="error_msg" >Error with username</span>
+    </div>
+    <div class="field" >
+      <span class="placeholder" >Password <span style="color: red" >*</span></span>
+      <input type="password" class="password">
+      <span class="error_msg" >Error with password</span>
+    </div>
+    <span class="forgot_password" >Forgot Password ?</span>
+    <button class="login_btn" >Sign in</button>
+    <span class="sign_up" > Not an user? <span style="text-decoration: underline;" >Sign up</span> </span>
+  </div>
+  <%= render "devise/shared/links" %>
+</div>
+</div>

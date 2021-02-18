@@ -33,6 +33,21 @@
       </div>
     </div>
 
+    <div class="search_bar" >
+              <%= form_tag drugs_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "field_search_bar",
+                  placeholder: "Buscar  "
+                %>
+                <%# <div class="circle_search_bar"> %>
+                <%# <%= submit_tag "Search", class: "btn btn-primary" %>
+                <%= button_tag type: :submit, class: "circle_search_bar" do %>
+                  <%= fa_icon 'search 2x' %>
+                <% end %>
+            <% end %>
+            </div>
+
 
 
   <!-- the list of movies -->

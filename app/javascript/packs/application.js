@@ -14,6 +14,7 @@ require("channels")
 
 /* JAVASCCRIPT FOR COMPONENTS */
 require("../components/brand-logos")
+require("../components/cart")
 
 
 

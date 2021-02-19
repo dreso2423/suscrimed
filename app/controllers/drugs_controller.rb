@@ -13,8 +13,9 @@ skip_before_action :authenticate_user!
 # en un futuro cuando le de checkout va ser un invoice create la invoice tiene invoice lines cada invoice tiene una invoice lines.
 
   def index
-    if params[:querry].present?
-      @drugs = Drug.search_by_drugs(params[:querry])
+    if params[:query].present?
+      @drugs = policy_scope(Drug).search_by_drugs(params[:query])
+      #where como en el video
     else
       @drugs = policy_scope(Drug).order(created_at: :desc)
     end

@@ -94,5 +94,46 @@ body, html{
     }
 
 }
+body > div:nth-child(3) > div > div > form{
+      max-width: 500px
+}
+
+// New Search Bar CSS
+// Form element
+body > div:nth-child(5) > div > div > form {
+  width: 40%;
+
+}
+// Input field
+#query {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  font-size: larger;
+  &:focus{
+    outline: none;
+    border: transparent;
+  }
+}
+#query:focus {
+  outline: none;
+  border: transparent;
+}
+// New Search button CSS
+body > div:nth-child(3) > div > div > form > button {
+  background: #FF6485;
+  border: transparent;
+  border-radius: 50%;
+  padding: 8px 12px;
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    background: #FF6485;
+  }
+}
+.rounded-pill {
+  border-radius: 6.1875rem !important;
+}
 
 

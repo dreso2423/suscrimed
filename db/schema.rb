@@ -7,10 +7,15 @@
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
+
+#Investigate how to acess a raw file via a url on google drive with rails
 #
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_02_14_002319) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "drugs", force: :cascade do |t|
     t.integer "cost"
@@ -39,8 +44,8 @@ ActiveRecord::Schema.define(version: 2021_02_14_002319) do
   end
 
   create_table "invoice_details", force: :cascade do |t|
-    t.integer "invoice_id", null: false
-    t.integer "drug_id", null: false
+    t.bigint "invoice_id", null: false
+    t.bigint "drug_id", null: false
     t.float "total"
     t.integer "quantity"
     t.float "subtotal"
@@ -51,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_02_14_002319) do
   end
 
   create_table "invoices", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "order_date"
     t.string "order_status"
     t.string "discount"

@@ -1,0 +1,77 @@
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+<div class="form" >
+    <div class="form_content" >
+        <div class="inputs group_1 display" >
+            <div class="progress_bar" >
+                <section class="step-indicator">
+                    <h5 class="step_title" >Step 1</h5>
+                    <div class="step step1 active">
+                        <div class="step-icon"><span class="number" >1</span></div>
+                    </div>
+                    <div class="indicator-line active"></div>
+                    <div class="step step2">
+                        <div class="step-icon"><span class="number" >2</span></div>
+                    </div>
+                    <div class="indicator-line"></div>
+                    <div class="step step3">
+                        <div class="step-icon"><span class="number" >3</span></div>
+                    </div>
+                </section>
+            </div>
+            <input class="input" placeholder="Email" >
+            <span style="display: block;" class="err_msg" >Error message</span>
+            <input class="input" placeholder="Name" >
+            <span class="err_msg" >Error message</span>
+            <input class="input" placeholder="Adress" >
+            <span class="err_msg" >Error message</span>
+            <input class="input" placeholder="Phone number" >
+            <span class="err_msg" >Error message</span>
+            <button id="next_step" class="button button_outline_radius_primary" >Next step</button>
+        </div>
+        <div class="inputs group_2 hide " >
+            <div class="progress_bar" >
+                <section class="step-indicator">
+                    <h5 class="step_title" >Step 2</h5>
+                    <div class="step step1 active">
+                        <div class="step-icon"><span class="number" >1</span></div>
+                    </div>
+                    <div class="indicator-line active"></div>
+                    <div class="step step2 active">
+                        <div class="step-icon"><span class="number" >2</span></div>
+                    </div>
+                    <div class="indicator-line active"></div>
+                    <div class="step step3">
+                        <div class="step-icon"><span class="number" >3</span></div>
+                    </div>
+                </section>
+            </div>
+            <input class="input" placeholder="Placeholder here" >
+            <span class="err_msg" >Error message</span>
+            <input class="input" placeholder="Placeholder here" >
+            <span class="err_msg" >Error message</span>
+            <input class="input" placeholder="Placeholder here" >
+            <span class="err_msg" >Error message</span>
+
+            <div class="checkboxes" >
+                <div class="checkbox">
+                    <input type="checkbox">
+                    <label >check</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox">
+                    <label>check</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox">
+                    <label>check</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox">
+                    <label>check</label>
+                </div>
+            </div>
+            <button class="button button_outline_radius_primary" >Submit</button>
+        </div>
+    </div>
+</div>

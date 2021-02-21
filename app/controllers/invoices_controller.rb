@@ -14,15 +14,16 @@ class InvoicesController < ApplicationController
   end
 
   def new
+    ## k = key v = value SER MAS EXPLICITO
     @invoice = Invoice.new
-    @invoice_details = []
     session[:cart].each do |k, v|
       drug = Drug.find(k)
-      @invoice_details << InvoiceDetail.new(invoice: @invoice, drug: drug, quantity: v, subtotal: drug.price_cents * v)
-
+      @invoice.invoice_details << InvoiceDetail.new(invoice: @invoice, drug: drug, quantity: v, subtotal: drug.price_cents * v, total: drug.price_cents * v )
+      ## @invoice.invoice_details.build(invoice: @invoice, drug: drug, quantity: v, subtotal: drug.price_cents * v, total: drug.price_cents * v)
     end
-    @invoice.invoice_details.build
+    @invoice_details = @invoice.invoice_details
     authorize @invoice
+
   end
 
   def create
@@ -48,7 +49,7 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).permit(:frequency, invoice_details_attributes: [:quantity, :subtotal, :drug_id])
+    params.require(:invoice).permit(:frequency, invoice_details_attributes: [:total, :quantity, :subtotal, :drug_id])
   end
 
 

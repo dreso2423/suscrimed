@@ -49,17 +49,11 @@ skip_before_action :authenticate_user!
   end
 
   def add_to_invoice
-    if session[:cart]
-      if session[:cart][params[:drug_id]]
-        session[:cart][params[:drug_id]] += 1
-      else
-        session[:cart][params[:drug_id]] = 1
-     end
-      ## if params[:drug_id]
-      ##   session[:cart] << params[:drug_id]
-      ## end
+    session[:cart] = {} if session[:cart].nil?
+    if session[:cart][params[:drug_id]]
+      session[:cart][params[:drug_id]] += 1
     else
-      session[:cart] = {}
+      session[:cart][params[:drug_id]] = 1
     end
     skip_authorization
     head :no_content

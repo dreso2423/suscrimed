@@ -23,6 +23,7 @@ class InvoicesController < ApplicationController
     end
     @invoice_details = @invoice.invoice_details
     authorize @invoice
+    @invoice.invoice_details.sum(:subtotal)
 
   end
 

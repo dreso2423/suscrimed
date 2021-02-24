@@ -77,4 +77,87 @@
     </div>
 </div>
 
+<!-- OLD
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+
+    <h2>Log in</h2>
+
+    <%#= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class="form") do |f| %>
+      <div class="field">
+        <%#= f.label :email %><br />
+        <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%#= f.label :password %><br />
+        <%#= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <%# if devise_mapping.rememberable? %>
+        <div class="field">
+          <%#= f.check_box :remember_me %>
+          <%#= f.label :remember_me %>
+        </div>
+      <%# end %>
+
+
+      <div class="actions ">
+        <%= f.submit "Iniciar Sesión" , :class => 'button button_fill_primary bigger' %>
+      </div>
+
+    <%#= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+
+
+<!-- NEW -->
+<div class="login_page" >
+<div class="login" >
+  <img alt="logo"  class="brand_logo" src="<%= asset_path 'suscrimed-logo-full.png' %>" >
+  <div class="title" >Welcome Back !</div>
+  <div class="sub_title">Login to your Suscrimed account</div>
+  <div class="form">
+    <div class="field" >
+      <span class="placeholder" >Username <span style="color: red" >*</span></span>
+      <input type="text" class="username">
+      <span class="error_msg" >Error with username</span>
+    </div>
+    <div class="field" >
+      <span class="placeholder" >Password <span style="color: red" >*</span></span>
+      <input type="password" class="password">
+      <span class="error_msg" >Error with password</span>
+    </div>
+    <span class="forgot_password" >Forgot Password ?</span>
+    <button class="login_btn" >Sign in</button>
+    <span class="sign_up" > Not an user? <span style="text-decoration: underline;" >Sign up</span> </span>
+  </div>
+</div>
+</div>
+
+<div class="login_page" >
+<div class="login" >
+  <img alt="logo"  class="brand_logo" src="<%= asset_path 'suscrimed-logo-full.png' %>" >
+  <div class="title" >Bienvenido !</div>
+  <div class="sub_title">Ingresa a tu cuenta Suscrimed</div>
+  <div class="form">
+    <div class="field" >
+      <span class="placeholder" >Username <span style="color: red" >*</span></span>
+      <input type="text" class="username">
+      <span class="error_msg" >Error with username</span>
+    </div>
+    <div class="field" >
+      <span class="placeholder" >Password <span style="color: red" >*</span></span>
+      <input type="password" class="password">
+      <span class="error_msg" >Error with password</span>
+    </div>
+    <span class="forgot_password" >Forgot Password ?</span>
+    <button class="login_btn" >Sign in</button>
+    <span class="sign_up" > Not an user? <span style="text-decoration: underline;" >Sign up</span> </span>
+  </div>
+  <%= render "devise/shared/links" %>
+</div>
+</div>
 

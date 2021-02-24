@@ -1,4 +1,4 @@
-  <div  onclick="toggleSideBar()" id="overlay" class=""></div>
+<div  onclick="toggleSideBar()" id="overlay" class=""></div>
    <div class="navbar" >
        <div class="logo" >
            <a href=" <%= root_path %> "> <%= image_tag "nav-logo.png", width: 50 %> </a>
@@ -22,13 +22,10 @@
        </ul>
        <ul class="nav_links_right" style="list-style: none;">
           <% if user_signed_in? %>
-
           <li class="dropdown nav-item" id="navbarDropdown">
             <% avatar_url = current_user.facebook_picture_url || "avatar.svg" %>
 
             <%= image_tag avatar_url, class: "avatar"%>
-
-
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -41,8 +38,6 @@
           <li class="nav_link_el" >
               <%= link_to 'Inicia Sesión', new_user_session_path  %>
           </li>
-
-
              <li class=" btn_action nav_link_el " >
                  <button class="button button_fill_primary" >Empezar</button>
              </li>

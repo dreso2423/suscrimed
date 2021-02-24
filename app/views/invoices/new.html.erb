@@ -1,36 +1,115 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-6">
-      <h2>Detalles de su orden: </h2>
+      <h2> </h2>
+
 
         <%= simple_form_for @invoice do |f| %>
-          <% @invoice_details.each do |invoice_detail| %>
             <%= f.simple_fields_for :invoice_details do |i| %>
-                <%= i.label invoice_detail.drug.drug_name %>
-                <%= i.input :quantity, input_html: { value: invoice_detail.quantity } %>
-                <%= i.input :subtotal, input_html: { value: invoice_detail.subtotal } %>
-                <%= i.input :drug_id, as: :hidden, input_html: { value: invoice_detail.drug.id } %>
-                <%= i.input :total, as: :hidden, input_html: { value: invoice_detail.total } %>
-                <a href= <%="/session/invoice_detail/drugs/#{invoice_detail.drug_id}"%> rel="nofollow" data-method="delete">Eliminar</a>
-            <% end %>
-        <% end %>
+                <%= i.input :quantity %>
+                <%= i.input :subtotal %>
+                <%= i.input :drug_id, as: :hidden %>
+                <%= i.input :total, as: :hidden %>
+               <% end %>
+                <%= f.input :frequency, collection: ['Semanal', 'Mensual', 'Trimestral'] %>
+                <div class="footer">
+                  <%= f.submit "Confirmar Orden", class: 'btn btn-primary' %>
 
-
-
-
-          <%= f.input :frequency, collection: ['Semanal', 'Mensual', 'Trimestral'] %>
-
-
-        <div class="footer">
-          <%= f.submit "Proceder a pagar", class: 'btn btn-primary' %>
-
-        </div>
-      <% end %>
+                </div>
+              <% end %>
     </div>
   </div>
 </div>
 
 
+
 <!-- en new vamos a tener una forma con simple for accion create
 
 parsear las drugas que estan en session[:cart] -->
+
+
+<div>
+  <div class="steps" >
+    <div class="steps" ></div>
+  </div>
+  <div class="cart_page">
+  <!-- Cart -->
+  <div class="cart_section">
+    <div class="header" >
+    <h1 class="title">Detalles de su orden:</h1>
+      <span class="next_button" >Pagar</span>
+    </div>
+    <div class="line"></div>
+    <div class="articles_section">
+      <table style="width:100%">
+     <%= simple_form_for @invoice do |f| %>
+         <%= f.simple_fields_for :invoice_details do |i| %>
+              <tr>
+                <td>
+                  <div class="cart_article">
+                    <div class="cart_article_content">
+                      <div class="cart_article_texts">
+                        <div class="">
+                          <img class="cart_article_img" src="<%= asset_path 'imagen-no-disponible.jpg' %>">
+                        </div>
+                        <div>
+                          <h1 class="cart_article_title">Epival</h1>
+                          <h4 class="cart_article_sub">medicina para tu cerebro</h4>
+                          <div class="cart_article_qty">
+                            <div class="cart_article_qty_selector"><span class="minus">-</span> <span class="qty">1</span>
+                              <span class="plus">+</span></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="prices">
+                        <h3 class="cart_article_price"> 1 x $1,800.00 </h3>
+                        <h2 class="cart_article_price_2">  $1,800.00 </h2>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+  <!-- side order prices -->
+  <div class="price_section">
+    <h1 class="title order_title">Order</h1>
+    <div class="line line_title"></div>
+    <div class="estimed-delivery">
+      <p class="label">Title</p>
+      <h3 class="shiping_date">17 de Febrero del 2021</h3>
+    </div>
+    <div class="line"></div>
+    <div class="checkout-prices">
+      <ul>
+        <li class="checkout-price">
+          <span class="label">Text</span>
+          <span class="price_value"><strong>$7,000</strong></span>
+        </li>
+        <li class="checkout-price">
+          <span class="label">Text</span>
+          <span class="price_value"><strong>$7,000</strong></span>
+        </li>
+        <li class="checkout-price">
+          <span class="label">Text</span>
+          <span class="price_value"><strong>$7,000</strong></span>
+        </li>
+      </ul>
+    </div>
+    <div class="line"></div>
+    <div class="checkout-total">
+      <div class="group_1" >
+      <p class="label">Total:</p>
+      <h3>$ <%= @total %></h3>
+      </div>
+      <div>
+      <img class="arrow_img" src="<%= asset_path 'right-arrow.svg' %>" >
+      </div>
+    </div>
+  </div>
+</div>
+</div>

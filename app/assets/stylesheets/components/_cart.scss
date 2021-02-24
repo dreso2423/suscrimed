@@ -1,0 +1,227 @@
+.inactive{
+  display: none ;
+}
+
+/* ----------------------------------------------- CART SECTION ----------------------------------------------- */
+.cart_page{
+  border-radius: 5px;
+  display: flex;
+  margin: auto;
+  padding: 100px;
+  font-family: 'Montserrat';
+    @media (max-width: 750px) {
+    padding: 20px;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--grey-10);
+    padding: 1.5rem;
+  }
+  .next_button{
+    color: $light-blue;
+  }
+  .title{
+    text-align: center;
+    font-weight: 700;
+    color: var(--grey-90);
+    font-size: 24px;
+    padding: 20px;
+    margin: auto;
+  }
+  .cart_section{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.14);
+    flex: 3;
+    min-height: 300px;
+    border-radius: 5px;
+    animation: slide-right 0.1s forwards;
+  }
+
+  /* SIDE CARD*/
+  .price_section {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.14);
+    margin-left: 30px;
+    flex: 1;
+    height: 360px;
+    min-width: 300px;
+    border-radius: 5px;
+    animation: slide-left 0.1s forwards;
+    .order_title {
+      text-align: start;
+    }
+    .estimed-delivery {
+      padding: 24px;
+      line-height: 0;
+
+      .shiping_date {
+        font-size: 18px;
+        color: #178255;
+        font-weight: 700;
+      }
+    }
+    .checkout-prices {
+      padding: 24px;
+      .checkout-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .price_value {
+          text-align: end;
+        }
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      span {
+        align-items: flex-end;
+      }
+    }
+    .checkout-total {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      h3 {
+        color: $light-blue;
+        line-height: 1;
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+  }
+}
+.switch_to_checkout, .switch_to_items_list{
+  width: 30px;
+  padding-top: 20px;
+  cursor: pointer;
+  @media (min-width: 750px) {
+    display: none;
+  }
+}
+
+.minimized_checkout_group_1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding-left: 10px;
+  width: 100%;
+  line-height: 0;
+  .label{
+    margin-top: 10px ;
+  }
+  h3{
+    color: $light-blue;
+    font-size: 25px;
+  }
+  @media (max-width: 750px) {
+    flex-direction: column;
+    line-height: 0;
+  }
+}
+
+.minimized_checkout{
+  display: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.14);
+  padding: 10px;
+  width: 94%;
+  height: 80px;
+  bottom: 0;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  z-index: 10;
+  position: fixed;
+  background-color: white;
+  @media (max-width: 750px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.line{
+  border-top: 1px solid #e5e9eb;
+  width: 100%;
+}
+
+/* --------------------------- PRODUCT ITEM --------------------------- */
+
+.cart_article{
+  padding: 20px;
+  padding-top: 30px ;
+  padding-bottom: 30px ;
+  .cart_article_texts{
+    display: flex;
+    color:   #1b3f4e;
+    .cart_article_title{
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .cart_article_sub{
+      font-weight: 300;
+      font-size: 16px;
+      color:   #4d6975;
+    }
+  }
+  .cart_article_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .cart_article_img{
+      width: 100px;
+      margin-right: 10px;
+    }
+    .cart_article_qty_selector{
+      .qty{
+        font-size: 20px;
+        font-weight: 400;
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+      .minus{
+        font-size: 35px;
+        padding: 0;
+        margin: 0;
+        font-weight: 800;
+      }
+      .plus{
+        font-size: 30px;
+        padding: 0;
+        margin: 0;
+        font-weight: 800;
+      }
+    }
+  }
+  .prices{
+    font-weight: 700;
+    line-height: 24px;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .cart_article_price{
+      color: grey;
+      font-size: 14px;
+    }
+    .cart_article_price_2{
+      color: $light_blue;
+      font-size: 23px;
+    }
+  }
+}
+
+
+/* --------------------- ANIMATIONS -------------------- */
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translatex(-200px);
+  }
+}
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translatex(200px);
+  }
+}

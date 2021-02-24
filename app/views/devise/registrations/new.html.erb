@@ -1,38 +1,87 @@
-<div class="container">
+<!--<div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
 
 
       <h2>Sign up</h2>
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+      <%#= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%#= render "devise/shared/error_messages", resource: resource %>
 
         <div class="form-input">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%#= f.label :email %><br />
+          <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="form-input">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
+          <%#= f.label :password %>
+          <%# if @minimum_password_length %>
+          <em>(<%#= @minimum_password_length %> characters minimum)</em>
+          <%# end %><br />
+          <%#= f.password_field :password, autocomplete: "new-password" %>
         </div>
 
         <div class="form-input">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          <%#= f.label :password_confirmation %><br />
+          <%#= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
 
         <div class="form-action">
-          <%= f.submit "Sign up" %>
+          <%#= f.submit "Sign up" %>
         </div>
-      <% end %>
+      <%# end %>
 
-      <%= render "devise/shared/links" %>
+      <%#= render "devise/shared/links" %>
      </div>
+  </div>
+</div>-->
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+<!-- NEW -->
+<div class="signup_page" >
+  <div class="signup" >
+    <img alt="logo"  class="brand_logo" src="<%= asset_path 'suscrimed-logo-full.png' %>" >
+    <div class="title" >Welcome !</div>
+    <div class="form">
+      <div class="group_1" >
+        <div class="field" >
+          <span class="placeholder" >Nombre <span style="color: red" >*</span></span>
+          <input type="text" class="username">
+        </div>
+        <div class="field" >
+          <span class="placeholder" >Apellido 1<span style="color: red" >*</span></span>
+          <input type="text" class="username">
+        </div>
+        <div class="field" >
+          <span class="placeholder" >Apellido 2<span style="color: red" >*</span></span>
+          <input type="text" class="username">
+        </div>
+      </div>
+      <div class="group_2" >
+        <div class="field" >
+          <span class="placeholder" >Correo Electronico <span style="color: red" >*</span></span>
+          <input type="text" class="username">
+        </div>
+      </div>
+      <div class="group_3" >
+        <div class="field" >
+          <span class="placeholder" >Telefono<span style="color: red" >*</span></span>
+          <input type="text" class="username">
+        </div>
+      </div>
+      <div class="group_4" >
+        <div class="field" >
+          <span class="placeholder" >Contrasena<span style="color: red" >*</span></span>
+          <input type="password" class="password">
+        </div>
+        <div class="field" >
+          <span class="placeholder" >Confirmar Contrasena<span style="color: red" >*</span></span>
+          <input type="password" class="password">
+        </div>
+      </div>
+      <button class="signup_btn" >Sign up</button>
+      <span class="sign_in" > Already have an account ? <span style="text-decoration: underline;" >Sign in</span> </span>
+    </div>
   </div>
 </div>
 

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+
+
+  get 'cart', to: 'pages#cart'
+
   root to: 'pages#home'
+
 
   resources :invoices do
     resources :invoice_details

@@ -1,0 +1,78 @@
+.footer{
+  padding-top: 64px;
+  padding-bottom: 64px;
+  margin: auto;
+  width: 85%;
+  background: white;
+  color: black;
+  font-family: 'Montserrat';
+  bottom: 0;
+  .logos{
+    display: flex;
+    justify-content: space-between;
+    .social_networks{
+      display: flex;
+      .insta_logo{
+        width: 25px;
+        margin: 10px;
+        filter: invert(50%) sepia(70%) saturate(3030%) hue-rotate(173deg) brightness(103%) contrast(103%);
+      }
+      .face_logo{
+        width: 25px;
+        filter: invert(50%) sepia(70%) saturate(3030%) hue-rotate(173deg) brightness(103%) contrast(103%);
+        margin: 10px;
+        border-radius: 25%;
+      }
+    }
+    .footer_logo{
+      margin-bottom: 30px;
+    }
+  }
+.footer_groups{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .footer_adresses{
+    line-height: 1;
+  }
+  .group_2, .group_3{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    line-height: 2;
+  }
+  .phone_number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0.5;
+    @media (max-width: 430px) {
+      flex-direction: row;
+      margin: 20px;
+    }
+    .label{
+      text-align: end;
+      color: $light-blue;
+      font-weight: 600;
+      @media (max-width: 430px) {
+       align-self: center;
+        margin-right: 10px;
+      }
+    }
+    p{
+      strong{
+        font-size: 30px;
+      }
+    }
+  }
+}
+  .line{
+    border-top: 2px $light-blue solid;
+  }
+  .copyrights{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}

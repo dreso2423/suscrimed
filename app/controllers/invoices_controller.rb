@@ -1,6 +1,8 @@
 class InvoicesController < ApplicationController
   def index
-    @invoice = Invoice.all
+
+    @invoices = current_user.invoices
+    @invoices = policy_scope(@invoices)
   end
 
   def edit
@@ -57,19 +59,17 @@ class InvoicesController < ApplicationController
         cancel_url: invoice_url(@invoice)
       )
       session[:cart] = nil
-      redirect_to @invoice
+      @invoice.update(checkout_session_id: session.id)
+      redirect_to checkout_path(@invoice)
     else
       render :new
     end
 
-    Drug = Drug.find(params[:drug_id])
-      order  = Order.create!(teddy: teddy, teddy_sku: teddy.sku, amount: teddy.price, state: 'pending', user: current_user)
+  end
 
-
-
-      order.update(checkout_session_id: session.id)
-      redirect_to new_order_payment_path(order)
-
+  def checkout
+    @invoice = Invoice.find(params[:id])
+    authorize @invoice
   end
 
   def show

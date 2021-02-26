@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :invoice_details
     resources :payments, only: :new
   end
+  get 'invoices/:id/checkout', to: 'invoices#checkout', as: "checkout"
   resources :drugs
   post 'drugs/add_to_invoice'
 

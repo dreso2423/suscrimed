@@ -1,4 +1,4 @@
-<h1> <%= @invoice.frequency %>  </h1>
+ <h1> <%= @invoice.frequency %>  </h1>
 
 <% @invoice.invoice_details.each do |invoice_detail|  %>
   <p> <%= invoice_detail.drug.drug_name %> <br>
@@ -6,28 +6,10 @@
   <%= invoice_detail.subtotal %> </p>
 
 <% end %>
-<p> total:<%= @invoice.invoice_detials.sum(:subtotal) %>  </p>
+<p> total:<%= @invoice.invoice_details.sum(:subtotal) %>  </p>
 <p> state:<%= @invoice.state %>  </p>
 
-div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"><%= image_tag @order.teddy.photo_url, width: '100%' %></div>
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.teddy.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
-          });
-        });
-      </script>
-    </div>
-  </div>
-</div>
+
+
 
 

@@ -7,12 +7,10 @@
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
-
-#Investigate how to acess a raw file via a url on google drive with rails
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_002319) do
+ActiveRecord::Schema.define(version: 2021_02_26_022155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +64,8 @@ ActiveRecord::Schema.define(version: 2021_02_14_002319) do
     t.string "frequency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "state"
+    t.string "checkout_session_id"
     t.index ["user_id"], name: "index_invoices_on_user_id"
   end
 

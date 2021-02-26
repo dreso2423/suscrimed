@@ -2,25 +2,12 @@
   <div class="row justify-content-center">
     <div class="col-lg-6">
       <h2> </h2>
+<!--
+      hacemos que este form sea hidden ? -->
 
-
-        <%= simple_form_for @invoice do |f| %>
-            <%= f.simple_fields_for :invoice_details do |i| %>
-                <%= i.input :quantity %>
-                <%= i.input :subtotal %>
-                <%= i.input :drug_id, as: :hidden %>
-                <%= i.input :total, as: :hidden %>
-               <% end %>
-                <%= f.input :frequency, collection: ['Semanal', 'Mensual', 'Trimestral'] %>
-                <div class="footer">
-                  <%= f.submit "Confirmar Orden", class: 'btn btn-primary' %>
-
-                </div>
-              <% end %>
     </div>
   </div>
 </div>
-
 
 
 
@@ -38,7 +25,20 @@ parsear las drugas que estan en session[:cart] -->
   <div class="cart_section">
     <div class="header" >
     <h1 class="title">Detalles de su orden:</h1>
-      <span class="next_button" >Pagar</span>
+      <%= simple_form_for @invoice do |f| %>
+          <%= f.simple_fields_for :invoice_details do |i| %>
+            <%= i.input :quantity, as: :hidden %>
+            <%= i.input :subtotal, as: :hidden%>
+            <%= i.input :drug_id, as: :hidden %>
+            <%= i.input :total, as: :hidden %>
+          <% end %>
+          <%= f.input :frequency, collection: ['Semanal', 'Mensual', 'Trimestral'] %>
+          <div class="footer">
+            <%= f.submit "Pagar", class: 'next_button' %>
+
+          </div>
+      <% end %>
+      <!-- <span class="" >Pagar</span> -->
     </div>
     <div class="line"></div>
     <div class="articles_section">
@@ -54,8 +54,8 @@ parsear las drugas que estan en session[:cart] -->
                           <img class="cart_article_img" src="<%= asset_path 'imagen-no-disponible.jpg' %>">
                         </div>
                         <div>
-                          <h1 class="cart_article_title">Epival</h1>
-                          <h4 class="cart_article_sub">medicina para tu cerebro</h4>
+                          <h1 class="cart_article_title"><%= i.object.drug.drug_name %></h1>
+                          <h4 class="cart_article_sub"><%= i.object.drug.drug_type %></h4>
                           <div class="cart_article_qty">
                             <div class="cart_article_qty_selector"><span class="minus">-</span> <span class="qty">1</span>
                               <span class="plus">+</span></div>
@@ -63,8 +63,8 @@ parsear las drugas que estan en session[:cart] -->
                         </div>
                       </div>
                       <div class="prices">
-                        <h3 class="cart_article_price"> 1 x $1,800.00 </h3>
-                        <h2 class="cart_article_price_2">  $ $1,800.00 </h2>
+                        <h3 class="cart_article_price"> <%= i.object.quantity %> x $ <%= i.object.total %> </h3>
+                        <h2 class="cart_article_price_2">  $ <%= i.object.total %></h2>
                       </div>
                     </div>
                   </div>
@@ -81,7 +81,7 @@ parsear las drugas que estan en session[:cart] -->
     <h1 class="title order_title">Order</h1>
     <div class="line line_title"></div>
     <div class="estimed-delivery">
-      <p class="label">Title</p>
+      <p class="label">Fecha</p>
       <h3 class="shiping_date">17 de Febrero del 2021</h3>
     </div>
     <div class="line"></div>
@@ -101,13 +101,15 @@ parsear las drugas que estan en session[:cart] -->
         </li>
       </ul>
     </div>
+
     <div class="line"></div>
     <div class="checkout-total">
       <div class="group_1" >
       <p class="label">Total:</p>
-      <h3>$ <%= @total %></h3>
+      <h3>$ <%= @total %> </h3>
       </div>
       <div>
+
       <img class="arrow_img" src="<%= asset_path 'right-arrow.svg' %>" >
       </div>
     </div>

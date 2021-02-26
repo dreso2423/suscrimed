@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :invoices do
     resources :invoice_details
+    resources :payments, only: :new
   end
   resources :drugs
   post 'drugs/add_to_invoice'
@@ -21,3 +22,5 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
+

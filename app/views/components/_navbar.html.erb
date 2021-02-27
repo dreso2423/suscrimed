@@ -24,8 +24,12 @@
           <% if user_signed_in? %>
           <li class="dropdown nav-item" id="navbarDropdown">
             <% avatar_url = current_user.facebook_picture_url || "avatar.svg" %>
-
             <%= image_tag avatar_url, class: "avatar"%>
+           <!--  <% @total_items = 0 %>
+            <% session[:cart].each{|k,v| @total_items += v } if session[:cart] %>
+            <%= @total_items %> -->
+
+
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -48,3 +52,20 @@
           <% end %>
        </ul>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

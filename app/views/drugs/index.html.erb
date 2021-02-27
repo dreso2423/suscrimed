@@ -39,7 +39,8 @@
             <h2> <%= humanized_money_with_symbol(drug.price) %></h2>
             <!-- <button class="card_2_btn" > Agregar </button> -->
             <!--  f.button :submit, "Agregar", class: "card_2_btn" %> -->
-              <input type="submit" value="Agregar" class="card_2_btn" >
+              <input type="submit" value="Agregar" class="card_2_btn" data-confirm="Estas Seguro que quieres agregar a carrito <%= drug.drug_name %>?" >
+
               <input type="hidden" name="drug_id" value= <%= drug.id %> >
               <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             </div>

@@ -52,14 +52,17 @@ class InvoicesController < ApplicationController
                   quantity: item.quantity
                 }
       end
-      session = Stripe::Checkout::Session.create(
+      session_stripe = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
+        shipping_address_collection: {
+            allowed_countries: ['MX'],
+          },
         line_items: line_items,
         success_url: invoice_url(@invoice),
         cancel_url: invoice_url(@invoice)
       )
-      session[:cart] = nil
-      @invoice.update(checkout_session_id: session.id)
+      session.delete(:cart)
+      @invoice.update(checkout_session_id: session_stripe.id)
       redirect_to checkout_path(@invoice)
     else
       render :new
@@ -75,6 +78,8 @@ class InvoicesController < ApplicationController
   def show
     @invoice = Invoice.find(params[:id])
     authorize @invoice
+    @stripe_order = Stripe::Checkout::Session.retrieve(@invoice.checkout_session_id)
+    @address = @stripe_order.shipping
   end
 
   private

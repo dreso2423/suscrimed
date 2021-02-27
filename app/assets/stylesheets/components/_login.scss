@@ -1,16 +1,20 @@
 .login_page{
   font-family: 'Montserrat';
+
 .login{
   flex-direction: column;
+  background: white;
   justify-content: center;
   text-align: center;
   width: 100%;
   max-width: 500px;
   margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin-bottom: 70px;
+  margin-top: 80px;
   padding-left: 10px ;
   padding-right: 10px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.1);
   .brand_logo{
     width: 50%;
     margin-left: -40px ;

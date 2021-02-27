@@ -2,10 +2,13 @@
   padding-top: 64px;
   padding-bottom: 64px;
   margin: auto;
-  width: 85%;
+  width: 90%;
   background: white;
   color: black;
   font-family: 'Montserrat';
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(0, 0, 0, 0.08);
   bottom: 0;
   .logos{
     display: flex;

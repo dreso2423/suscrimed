@@ -17,7 +17,7 @@ skip_before_action :authenticate_user!
       @drugs = policy_scope(Drug).search_by_drugs(params[:query])
       #where como en el video
     else
-      @drugs = policy_scope(Drug).order(created_at: :desc)
+      @drugs = policy_scope(Drug).order(created_at: :asc).limit(50)
     end
 
   end

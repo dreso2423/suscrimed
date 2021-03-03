@@ -32,9 +32,9 @@ parsear las drugas que estan en session[:cart] -->
             <%= i.input :drug_id, as: :hidden %>
             <%= i.input :total, as: :hidden %>
           <% end %>
-          <%= f.input :frequency, collection: ['Semanal', 'Mensual', 'Trimestral'] %>
+          <!-- <%= f.input :frequency, collection: ['Semanal', 'Mensual', 'Trimestral'] %> -->
           <div class="footer">
-            <%= f.submit "Pagar", class: 'next_button' %>
+          <!--   <%= f.submit "Pagar", class: 'next_button' %> -->
 
           </div>
       <% end %>
@@ -63,8 +63,8 @@ parsear las drugas que estan en session[:cart] -->
                         </div>
                       </div>
                       <div class="prices">
-                        <h3 class="cart_article_price"> <%= i.object.quantity %> x $ (<%= i.object.total/100 %>) </h3>
-                        <h2 class="cart_article_price_2">  $ <%= i.object.total/100 %></h2>
+                        <h3 class="cart_article_price"> <%= i.object.quantity %> x $ <%= i.object.total/100 %> </h3>
+                        <h4 class="cart_article_price_2">  $ <%= i.object.total/100 %></h4>
                       </div>
                     </div>
                   </div>
@@ -77,36 +77,23 @@ parsear las drugas que estan en session[:cart] -->
   </div>
 
   <!-- side order prices -->
-  <div class="price_section">
-    <h1 class="title order_title">Order</h1>
+  <div class="price_section" id="checkout_side_card">
+    <h1 class="title order_title">Orden</h1>
     <div class="line line_title"></div>
     <div class="estimed-delivery">
       <p class="label">Fecha</p>
-      <h3 class="shiping_date">17 de Febrero del 2021</h3>
+      <h3 class="shiping_date"> Hoy es <%=  Date.current.strftime("%d/%m/%Y") %> </h3>
     </div>
     <div class="line"></div>
     <div class="checkout-prices">
-      <ul>
-        <li class="checkout-price">
-          <span class="label">Text</span>
-          <span class="price_value"><strong>$7,000</strong></span>
-        </li>
-        <li class="checkout-price">
-          <span class="label">Text</span>
-          <span class="price_value"><strong>$7,000</strong></span>
-        </li>
-        <li class="checkout-price">
-          <span class="label">Text</span>
-          <span class="price_value"><strong>$7,000</strong></span>
-        </li>
-      </ul>
+      <input type="submit" form="new_invoice" class="button button_fill_primary" value="Pagar">
     </div>
 
     <div class="line"></div>
     <div class="checkout-total">
       <div class="group_1" >
       <p class="label">Total:</p>
-      <h3>$ <%= @total /100%> </h3>
+      <h3> <%= humanized_money_with_symbol(@total /100) %> </h3>
       </div>
       <div>
 

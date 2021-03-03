@@ -1,7 +1,7 @@
 
 
 <div class="container d-flex justify-content-center">
-    <div class="card mt-5 p-4 text-black">
+    <div class="card_checkout mt-5 p-4 text-black">
         <p class="top mb-1">Gracias por tu orden </p>
         <h1>Resumen de Orden</h1>
         <p><strong>Tu orden va ser de </strong> for <strong><%= humanized_money_with_symbol @invoice.invoice_details.sum(:subtotal)/100 %></strong></p>

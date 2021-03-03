@@ -63,8 +63,8 @@ parsear las drugas que estan en session[:cart] -->
                         </div>
                       </div>
                       <div class="prices">
-                        <h3 class="cart_article_price"> <%= i.object.quantity %> x $ <%= i.object.total %> </h3>
-                        <h2 class="cart_article_price_2">  $ <%= i.object.total %></h2>
+                        <h3 class="cart_article_price"> <%= i.object.quantity %> x $ (<%= i.object.total/100 %>) </h3>
+                        <h2 class="cart_article_price_2">  $ <%= i.object.total/100 %></h2>
                       </div>
                     </div>
                   </div>
@@ -106,7 +106,7 @@ parsear las drugas que estan en session[:cart] -->
     <div class="checkout-total">
       <div class="group_1" >
       <p class="label">Total:</p>
-      <h3>$ <%= @total %> </h3>
+      <h3>$ <%= @total /100%> </h3>
       </div>
       <div>
 

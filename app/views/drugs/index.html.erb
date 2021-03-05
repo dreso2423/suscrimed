@@ -27,11 +27,11 @@
     <div class="card_2" >
             <div class="card_2_content" >
                 <div class="card_img" >
-                    <%= image_tag drug.image, class: "card-img-top" %>
+                    <%= image_tag drug.image, class: "card-img-top", style: "height: 250px; object-fit: cover;" %>
                 </div>
-                <div class="card_2_texts" >
-                    <h1 class="card_2_title"><%= drug.drug_name %></h1>
-                    <h4 class="card_2_sub" ><%= drug.drug_type %></h4>
+                <div class="card_2_texts"  >
+                    <h1 class="card_2_title" ><%= drug.drug_name %></h1>
+                    <h4 class="card_2_sub"  ><%= drug.drug_type %></h4>
                 </div>
             </div>
             <div class="card_2_line" ></div>

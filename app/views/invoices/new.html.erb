@@ -51,7 +51,7 @@ parsear las drugas que estan en session[:cart] -->
                     <div class="cart_article_content">
                       <div class="cart_article_texts">
                         <div class="">
-                          <img class="cart_article_img" src="<%= asset_path 'imagen-no-disponible.jpg' %>">
+                          <img class="cart_article_img" src= <%= i.object.drug.image %>>
                         </div>
                         <div>
                           <h1 class="cart_article_title"><%= i.object.drug.drug_name %></h1>

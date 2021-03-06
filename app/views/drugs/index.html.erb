@@ -23,7 +23,8 @@
 
 <div class="cards" >
   <% @drugs.each do |drug| %>
-  <form action="/drugs/add_to_invoice" method="post">
+<!--   <form action="/drugs/add_to_invoice" method="post"> -->
+  <%= form_tag drugs_add_to_invoice_path, method: :post, remote: true do %>
     <div class="card_2" >
             <div class="card_2_content" >
                 <div class="card_img" >
@@ -45,7 +46,8 @@
               <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             </div>
       </div>
-  </form>
+  <% end %>
+  <!-- </form> -->
   <% end %>
 </div>
 

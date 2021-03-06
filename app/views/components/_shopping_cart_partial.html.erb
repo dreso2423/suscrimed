@@ -1,0 +1,4 @@
+<a class="nav_id" href="/invoices/new"> Carrito</a>
+<% @total_items = 0 %>
+<% session[:cart].each{|k,v| @total_items += v } if session[:cart] %>
+<%= @total_items %>

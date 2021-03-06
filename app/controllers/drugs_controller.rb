@@ -13,11 +13,14 @@ skip_before_action :authenticate_user!
 # en un futuro cuando le de checkout va ser un invoice create la invoice tiene invoice lines cada invoice tiene una invoice lines.
 
   def index
+
     if params[:query].present?
-      @drugs = policy_scope(Drug).search_by_drugs(params[:query])
+      @drugs = policy_scope(Drug).search_by_drugs(params[:query]).paginate(page: params[:page ], per_page: 30).order(created_at: :asc)
+
       #where como en el video
     else
-      @drugs = policy_scope(Drug).order(created_at: :asc).limit(50)
+      @drugs = policy_scope(Drug).paginate(page: params[:page ], per_page: 30).order(created_at: :asc)
+
     end
 
   end
@@ -56,7 +59,6 @@ skip_before_action :authenticate_user!
       session[:cart][params[:drug_id]] = 1
     end
     skip_authorization
-    head :no_content
   end
 
   def delete

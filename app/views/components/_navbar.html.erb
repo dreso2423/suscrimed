@@ -23,10 +23,17 @@
        <ul class="nav_links_right" style="list-style: none;">
           <% if user_signed_in? %>
           <li  id="shopping_cart" class="nav_link_el" >
-               <a class="nav_id" href="/invoices/new"> Carrito</a>
-               <% @total_items = 0 %>
+
+
+              <a class="nav_id" href="/invoices/new">
+                <span class="fa-stack fa-2x has-badge" data-count="<% @total_items = 0 %>
                <% session[:cart].each{|k,v| @total_items += v } if session[:cart] %>
-               <%= @total_items %>
+               <%= @total_items %>">
+                  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                  <i style="" class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
+                </span>
+              </a>
+
            </li>
           <li class="dropdown nav-item" id="navbarDropdown">
             <% avatar_url = current_user.facebook_picture_url || "avatar.svg" %>

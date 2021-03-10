@@ -12,7 +12,26 @@ import { Controller } from "stimulus";
 export default class extends Controller {
   static targets = [ 'count' ];
 
-  refresh(event) {
-    console.log(this.dataCounterTarget);
+  sleep(milliseconds) {
+   var start = new Date().getTime();
+   for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds) {
+     break;
+    }
+   }
+  }
+
+  refresh() {
+    this.sleep(1000);
+    fetch('/counter', { headers: { accept: "application/json" } })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data);
+        this.countTarget.dataset.count = data.count;
+      });
   }
 }
+
+
+
+

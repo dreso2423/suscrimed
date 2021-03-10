@@ -1,5 +1,5 @@
 <div  onclick="toggleSideBar()" id="overlay" class=""></div>
-   <div  data-controller="counter" class="navbar" >
+   <div  class="navbar" >
        <div class="logo" >
            <a href=" <%= root_path %> "> <%= image_tag "nav-logo.png", width: 50 %> </a>
        </div>
@@ -22,14 +22,11 @@
        </ul>
        <ul class="nav_links_right" style="list-style: none;">
           <% if user_signed_in? %>
-          <li  id="shopping_cart" class="nav_link_el" >
+          <li id="shopping_cart" class="nav_link_el" >
 
 
-              <a data-counter-target="count" class="nav_id" href="/invoices/new">
-                <span data-counter-target="count"class="fa-stack fa-2x has-badge" data-count="<%= @cart_items %>">
-              <!--   <span class="fa-stack fa-2x has-badge" data-count="<% @total_items = 0 %>
-               <% session[:cart].each{|k,v| @total_items += v } if session[:cart] %>
-               <%= @total_items %>"> -->
+              <a class="nav_id" href="/invoices/new">
+                <span data-counter-target="count" class="fa-stack fa-2x has-badge" data-count="<%= @cart_items %>">
                   <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                   <i style="" class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
                 </span>

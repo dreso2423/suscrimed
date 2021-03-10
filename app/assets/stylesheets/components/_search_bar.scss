@@ -94,13 +94,13 @@ body, html{
     }
 
 }
-body > div:nth-child(3) > div > div > form{
+body > div > div.card_search_bar > div > div > form{
       max-width: 500px
 }
 
 // New Search Bar CSS
 // Form element
-body > div:nth-child(5) > div > div > form {
+body > div > div.card_search_bar > div > div > form {
   width: 40%;
 
 }
@@ -121,7 +121,7 @@ body > div:nth-child(5) > div > div > form {
   border: transparent;
 }
 // New Search button CSS
-body > div:nth-child(3) > div > div > form > button {
+body > div > div.card_search_bar > div > div > form > button {
   background: #FF6485;
   border: transparent;
   border-radius: 50%;

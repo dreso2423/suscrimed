@@ -1,0 +1,5 @@
+meta_product_name: "Suscrimed"
+meta_title: "Suscrimed - Tu medicina fácil"
+meta_description: "Nosotros nos encargamos de tu salud"
+meta_image: "Suscrimed-Backround.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

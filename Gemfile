@@ -35,6 +35,7 @@ gem 'figaro'
 gem 'dotenv-rails'
 gem 'pg_search', '~> 2.3.0'
 gem 'font-awesome-rails'
+gem 'turbolinks_render'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

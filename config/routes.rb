@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
 
   get 'cart', to: 'pages#cart'
-
+  get 'reviews', to: 'pages#reviews'
+  get 'blog', to: 'pages#blog'
   root to: 'pages#home'
+
 
 
   resources :invoices do

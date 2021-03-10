@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  before_action :set_counter
   before_action :authenticate_user!
+
   include Pundit
 
   # Pundit: white-list approach.
@@ -17,5 +19,14 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+  before_action :set_counter
+
+  private
+
+  def set_counter
+    @cart_items = 0
+    session[:cart].each{|k,v| @cart_items += v } if session[:cart]
+    @cart_items
   end
 end
